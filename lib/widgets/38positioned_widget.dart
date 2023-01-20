@@ -1,12 +1,11 @@
 
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(myapp());
-}
+import '39constrained_box.dart';
 
-class myapp extends StatelessWidget {
-  const myapp({Key? key}) : super(key: key);
+
+class PositionedScreen extends StatelessWidget {
+  const PositionedScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,13 @@ class positioned_widget extends StatelessWidget {
                 width: 100,
                 color: Colors.red,
               ),
-            )
+            ),
+            ElevatedButton(onPressed: () {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ConstrainedScreen();
+              },));
+            }, child: Text('Next',style: TextStyle(fontSize: 20),))
           ],
         ),
       ) ,

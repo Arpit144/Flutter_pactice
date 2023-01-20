@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '10inkwell.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class Row_ColumnScreen extends StatelessWidget {
+  const Row_ColumnScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -87,8 +86,14 @@ class MyApp extends StatelessWidget {
                       width: 50,
                       color: Colors.cyanAccent,
                     ),
+
                   ],
-                )
+                ),
+                ElevatedButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return InkwellScreen();
+                  },));
+                }, child: Text('Next'))
               ],
             ),
           ),

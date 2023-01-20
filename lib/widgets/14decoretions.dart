@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '15expended.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class DecoretionScreen extends StatelessWidget {
+  const DecoretionScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Container Decoretions'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -71,6 +70,11 @@ class MyApp extends StatelessWidget {
                       shape: BoxShape.circle,
                   ),
                 ),
+                ElevatedButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                     return ExpandedScreen();
+                  },));
+                }, child: Text('Next'))
               ],
             ),
           ),

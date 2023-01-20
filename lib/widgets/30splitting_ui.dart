@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MyApp());
-}
+import '31stack.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class SplitteduiScreen extends StatelessWidget {
+  const SplitteduiScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Arpit'),
+      appBar: AppBar(title: Text('Splited UI'),
       ),
       body: Column(
         children: [
@@ -163,8 +162,14 @@ class _menuState extends State<menu> {
                 child: Icon(Icons.search_rounded,size: 50,)),
             Expanded(
                 flex: 2,
-                child: Icon(Icons.add,size: 50,)),
-            Expanded(
+                child: ElevatedButton(onPressed: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return StackScreen();
+                  },));
+                }, child: Text('Next',style: TextStyle(fontSize: 20),)),
+              ),
+              Expanded(
                 flex: 2,
                 child: Icon(Icons.delete,size: 50,)),
 

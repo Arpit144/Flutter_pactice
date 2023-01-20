@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '3center.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class ContainerScreen extends StatelessWidget {
+  const ContainerScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +12,24 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Cointainer'),
+          title: Text('Container'),
 
         ),
-       body: Container(
-         height: 100,
-         width: 100,
-         color: Colors.blue,
-         child: Text('Hello World')
+       body: Column(
+         children: [
+           Container(
+             height: 100,
+             width: 100,
+             color: Colors.blue,
+             child: Text('This Is Container')
+           ),
+           ElevatedButton(onPressed: () {
+
+             Navigator.push(context, MaterialPageRoute(builder: (context) {
+               return CenterwidhgetScreen();
+             },));
+           }, child: Text('Next',style: TextStyle(fontSize: 20),))
+         ],
        ),
       ),
     );

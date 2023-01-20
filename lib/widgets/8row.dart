@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '9row_columns.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class RowScreen extends StatelessWidget {
+  const RowScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Rows'),
         ),
         body: Center(
           child: Row(
@@ -43,7 +42,13 @@ class MyApp extends StatelessWidget {
                 width: 50,
                 color: Colors.cyanAccent,
               ),
+              ElevatedButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Row_ColumnScreen();
+                },));
+              }, child: Text('Next'))
             ],
+
           ),
         ),
       ),

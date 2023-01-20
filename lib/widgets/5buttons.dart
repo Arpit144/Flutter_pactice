@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '6addimage.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class ButtonScreen extends StatelessWidget {
+  const ButtonScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Button Types'),
         ),
 
 
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
 
 
               TextButton(
-                child: Text('Click ME',style: TextStyle(fontSize: 30),),
+                child: Text('Text Button',style: TextStyle(fontSize: 30),),
                 onPressed: () {
                   print('text Button clicked');
                 },
@@ -53,6 +52,12 @@ class MyApp extends StatelessWidget {
                 },
               ),
 
+              ElevatedButton(onPressed: () {
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ImageScreen();
+                },));
+              }, child: Text('Next',style: TextStyle(fontSize: 20),))
 
             ],
           ),

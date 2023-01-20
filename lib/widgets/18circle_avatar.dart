@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '19fonts.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class CircleavatarScreen extends StatelessWidget {
+  const CircleavatarScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +11,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Circle Avatar'),
         ),
         body: Column(
           children: [
@@ -33,7 +31,13 @@ class MyApp extends StatelessWidget {
                 maxRadius: 70,
                 child: Text('Name', style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
               ),
-            )
+            ),
+            ElevatedButton(onPressed: () {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CustomefontScreen();
+              },));
+            }, child: Text('Next',style: TextStyle(fontSize: 20),))
           ],
         ),
       ),

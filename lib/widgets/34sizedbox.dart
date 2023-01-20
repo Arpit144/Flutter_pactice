@@ -1,17 +1,17 @@
 
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MyApp());
-}
+import '35rich_text.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+class SizedboxScreen extends StatelessWidget {
+  const SizedboxScreen({super.key});
 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'myapplication',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
       home: MyHomePage(),
@@ -62,7 +62,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Text('Button1'),
               ),
+
             ),
+            ElevatedButton(onPressed: () {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return RichtextScreen();
+              },));
+            }, child: Text('Next',style: TextStyle(fontSize: 20),))
           ],
         ),
       ),

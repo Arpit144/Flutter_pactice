@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '28gridview_builder.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class GridviewScreen extends StatelessWidget {
+  const GridviewScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +11,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Gridview'),
+          title: Text('Static Gridview'),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -50,7 +48,13 @@ class MyApp extends StatelessWidget {
                     Container(color: Colors.deepPurple,),
                   ],
                 ),
-              )
+              ),
+              ElevatedButton(onPressed: () {
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DynamicgridviewScreen();
+                },));
+              }, child: Text('Next',style: TextStyle(fontSize: 20),))
             ],
           ),
         ),

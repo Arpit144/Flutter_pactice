@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '26date_time_picker.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+
+class DateScreen extends StatefulWidget {
+  const DateScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<DateScreen> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<DateScreen> {
   @override
   Widget build(BuildContext context) {
     var datetime = DateTime.now();
@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Date & Time Format'),
         ),
         body: Center(
             child: Column(
@@ -41,7 +41,13 @@ class _MyAppState extends State<MyApp> {
                   setState(() {
 
                   });
-                }, child: Text('Change'))
+                }, child: Text('Change')),
+                ElevatedButton(onPressed: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return DatetimepickerScreen();
+                  },));
+                }, child: Text('Next',style: TextStyle(fontSize: 20),))
               ],
             )),
       ),

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '24date_time.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Container(
-            height: 500,
+            height: double.infinity,
             width: 370,
             child: SingleChildScrollView(
               child: Column(
@@ -37,13 +35,13 @@ class MyApp extends StatelessWidget {
 
                   TextField(
                     controller: name ,
-                    maxLength: 5,
+
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.supervised_user_circle),
                       labelText: 'Name',
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                      errorText: 'Wrong Input',
+
 
                     ) ,
                   ),
@@ -60,6 +58,7 @@ class MyApp extends StatelessWidget {
                   Container(height: 20,),
                   TextField(
                     controller: mobile ,
+                    maxLength: 10,
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.phone),
@@ -92,7 +91,14 @@ class MyApp extends StatelessWidget {
                     print('Mobile = $umobile ');
                     print('Password = $upass ');
 
-                  }, child: Text('Register'))
+                  }, child: Text('Register')),
+
+                  ElevatedButton(onPressed: () {
+
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return DatetimeScreen();
+                    },));
+                  }, child: Text('Next',style: TextStyle(fontSize: 20),))
                 ],
               ),
             ),

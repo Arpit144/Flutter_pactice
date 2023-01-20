@@ -1,12 +1,10 @@
 
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(myapp());
-}
+import '37font_awesome_icons.dart';
 
-class myapp extends StatelessWidget {
-  const myapp({Key? key}) : super(key: key);
+class IconsScreen extends StatelessWidget {
+  const IconsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +49,12 @@ class myhomepage extends StatelessWidget {
               size: 80,
               color: Colors.deepPurple,
             ),
+            ElevatedButton(onPressed: () {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return FontawesomeiconScreen();
+              },));
+            }, child: Text('Next',style: TextStyle(fontSize: 20),))
           ],
         ),
       ),

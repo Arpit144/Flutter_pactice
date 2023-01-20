@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '5buttons.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class TextstyleScreen extends StatelessWidget {
+  const TextstyleScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +12,27 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Text'),
+          title: Text('Text style'),
 
         ),
         body:Center(
-            child: Text('Hello Arpit',style: TextStyle(
-                fontSize: 30,
-                color: Colors.black,
-                fontWeight: FontWeight.w900,
-                backgroundColor: Colors.redAccent,
-            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Hello Arpit',style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w900,
+                    backgroundColor: Colors.redAccent,
+                ),
+                ),
+                ElevatedButton(onPressed: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ButtonScreen();
+                  },));
+                }, child: Text('Next',style: TextStyle(fontSize: 20),))
+              ],
             )
         )
       ),

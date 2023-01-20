@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MyApp());
-}
+import '1appbar.dart';
+import '32custome_widget.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class StackScreen extends StatelessWidget {
+  const StackScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'my Applicatoin',
+      title: 'Stack UI',
       theme: ThemeData(primarySwatch: Colors.green),
       home: MyHomePage(),
     );
@@ -28,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Arpit'),
+      appBar: AppBar(title: Text('Stack Widget'),
       ),
     body:
         Container(
@@ -56,6 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
+              ElevatedButton(onPressed: () {
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return CustomewidgetScreen();
+                },));
+              }, child: Text('Next',style: TextStyle(fontSize: 20),))
             ],
 
     ),

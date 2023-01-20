@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '11scrollview.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class InkwellScreen extends StatelessWidget {
+  const InkwellScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Inkwell'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -55,7 +54,13 @@ class MyApp extends StatelessWidget {
               onLongPress: () {
                 print('Long Pressed Coontainer Blue');
               },
-            )
+            ),
+            ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ScrollviewScreen();
+              },));
+            }, child: Text('Next'))
+
           ],
         ),
       ),

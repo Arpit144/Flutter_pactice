@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '12listview.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class ScrollviewScreen extends StatelessWidget {
+  const ScrollviewScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +119,11 @@ class MyApp extends StatelessWidget {
                   height: 300,
                   color: Colors.deepOrangeAccent,
                 ),
-
+                ElevatedButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ListviewScreen();
+                  },));
+                }, child: Text('Next'))
               ],
             ),
           ),

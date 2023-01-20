@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '7columns.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class ImageScreen extends StatelessWidget {
+  const ImageScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +11,22 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Image'),
         ),
         body:Center(
-          child: Image.asset('assets/images/download.jpeg'),
+          child: Column(
+
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/download.jpeg'),
+              ElevatedButton(onPressed: () {
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ColumnScreen();
+                },));
+              }, child: Text('Next',style: TextStyle(fontSize: 20),))
+            ],
+          ),
         )
       ),
     );

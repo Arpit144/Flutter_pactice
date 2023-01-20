@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '23registration.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-
+class TextfieldScreen extends StatelessWidget {
+  const TextfieldScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +81,13 @@ class MyApp extends StatelessWidget {
                   print('Pass= $upass');
 
 
-                }, child: Text('Login', style: TextStyle(fontSize: 25),))
+                }, child: Text('Login', style: TextStyle(fontSize: 25),)),
+                ElevatedButton(onPressed: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RegisterScreen();
+                  },));
+                }, child: Text('Next',style: TextStyle(fontSize: 20),))
               ],
             ),
           ),

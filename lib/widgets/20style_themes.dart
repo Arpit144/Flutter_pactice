@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:learnings/themes/styles.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '21cardview.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class ThemeScreen extends StatelessWidget {
+  const ThemeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +32,12 @@ class MyApp extends StatelessWidget {
             Text('Patel',style: Theme.of(context).textTheme.headline2!.copyWith(color: Colors.red),),
             Text('Folder1', style: myText1(),),
             Text('Folder2', style: myText2(mcolor1: Colors.redAccent),),
+            ElevatedButton(onPressed: () {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CardviewScreen();
+              },));
+            }, child: Text('Next',style: TextStyle(fontSize: 20),))
 
 
           ],

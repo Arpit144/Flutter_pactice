@@ -2,18 +2,17 @@
 
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '27gridview.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class DatetimepickerScreen extends StatefulWidget {
+  const DatetimepickerScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<DatetimepickerScreen> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<DatetimepickerScreen> {
   @override
   Widget build(BuildContext context) {
 
@@ -32,11 +31,16 @@ class _MyAppState extends State<MyApp> {
                      firstDate: DateTime(2021),
                      lastDate: DateTime(2022)
                  );
-
                  if(date!=null){
                    print('${date.day}-${date.month}-${date.year}');
                  }
-               }, child: Text('Select Date'))
+               }, child: Text('Select Date')),
+                ElevatedButton(onPressed: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return GridviewScreen();
+                  },));
+                }, child: Text('Next',style: TextStyle(fontSize: 20),))
               ],
             ),
           ),

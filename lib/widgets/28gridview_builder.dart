@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '29callback_function.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class DynamicgridviewScreen extends StatelessWidget {
+  const DynamicgridviewScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +25,31 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('Dynamic GridView'),
         ),
-        body: GridView.builder(itemBuilder: (context, index) {
-          return Container(color: colors[index],);
-        },
-          itemCount: colors.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
-              crossAxisSpacing: 11,
-              mainAxisSpacing: 11),
-          // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(crossAxisCount: 5),
+        body: Column(
+          children: [
+            Expanded(
 
+              child: GridView.builder(itemBuilder: (context, index) {
+                return Container(color: colors[index],);
+              },
+                itemCount: colors.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 5,
+                    crossAxisSpacing: 11,
+                    mainAxisSpacing: 11),
+                // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(crossAxisCount: 5),
+
+              ),
+            ),
+            ElevatedButton(onPressed: () {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CallbackScreen();
+              },));
+            }, child: Text('Next',style: TextStyle(fontSize: 20),))
+          ],
         )
       ),
     );

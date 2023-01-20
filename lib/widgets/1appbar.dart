@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import '2cointainer.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class AppbarScreen extends StatelessWidget {
+  const AppbarScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +11,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Arpit Patel'),
+          title: Text('This is Appbar'),
+        ),
+        body: Center(
+          child: ElevatedButton(onPressed: () {
+
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return ContainerScreen();
+            },));
+          }, child: Text('Next',style: TextStyle(fontSize: 20),)),
         ),
       ),
     );
