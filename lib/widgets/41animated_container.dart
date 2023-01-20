@@ -60,6 +60,8 @@ class _FooanimationScreenState extends State<FooanimationScreen> {
                     }
                 });
               }, child: Text('Animate')),
+
+
               SizedBox(height: 30,),
               ElevatedButton(onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
