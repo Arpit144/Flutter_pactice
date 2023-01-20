@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnings/widgets/1appbar.dart';
 
+import '0splash_screen.dart';
 import '2cointainer.dart';
 
 void main(){
@@ -13,9 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'my Applicatoin',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: MyHomePage(),
+      home: SplashScreen(),
     );
   }
 }
