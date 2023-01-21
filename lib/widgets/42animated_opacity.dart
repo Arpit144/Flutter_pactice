@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '43cross_fade.dart';
+
 class AnimatedopacityScreen extends StatefulWidget {
   const AnimatedopacityScreen({Key? key}) : super(key: key);
 
@@ -51,7 +53,16 @@ class _AnimatedopacityScreenState extends State<AnimatedopacityScreen> {
 
                 });
 
-              }, child: Text('Animate'))
+              }, child: Text('Animate')),
+
+
+              ElevatedButton(onPressed: () {
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return CrossfadeScreen();
+                },));
+
+              }, child: Text('Next'))
             ],
           ),
         ),
