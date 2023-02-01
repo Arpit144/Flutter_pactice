@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnings/widgets/48gradient.dart';
 
 class CliprractScreen extends StatelessWidget {
   const CliprractScreen({Key? key}) : super(key: key);
@@ -17,6 +18,9 @@ class CliprractScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
                   child: Image.asset('assets/images/1.jpg',width: 300,))
             ),
+            ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => GradientScreen(),));
+            }, child: Text('Next'))
           ],
         ),
       ),
